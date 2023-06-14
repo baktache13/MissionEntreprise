@@ -1,6 +1,8 @@
 package tn.esprit.seancespring.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Product {
@@ -16,6 +18,9 @@ public class Product {
     private String description;
 
     private String imageUrl;
+    @ManyToMany(mappedBy = "products")
+    private Set<Order> orders = new HashSet<>();
+
 
     public String getImageUrl() {
         return imageUrl;
