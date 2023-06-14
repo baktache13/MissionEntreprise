@@ -42,4 +42,11 @@ public class ActiviteController {
     {
         return iActiviteService.updateActivite(act);
     }
+
+    @PostMapping("/add/{idCentre}")
+    private Activite addActiviteAndAssignToCentre(@RequestBody Activite act,@PathVariable("idCentre") Long idCentre)
+    {
+        return iActiviteService.addActiviteAndAssignToCentre(act,idCentre);
+    }
+
 }

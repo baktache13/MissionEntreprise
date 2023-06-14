@@ -29,7 +29,8 @@ public class CentreCamping {
 
     private Long capacite_acc;
 
-    @ManyToMany(mappedBy = "centres")
+    @OneToMany(mappedBy = "centreCamping",fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
+    //@JsonIgnore
     private List<Activite> activites;
 
 }

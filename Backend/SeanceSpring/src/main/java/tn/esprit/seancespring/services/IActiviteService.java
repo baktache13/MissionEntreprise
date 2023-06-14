@@ -15,4 +15,6 @@ public interface IActiviteService {
     Activite updateActivite(Activite s);
 
     void deleteActivite(Long id);
+
+    Activite addActiviteAndAssignToCentre(Activite act,Long idCentre);
 }

@@ -1,5 +1,6 @@
 package tn.esprit.seancespring.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +27,8 @@ public class Activite {
 
     private int capaciteMax;
 
-    @ManyToMany(mappedBy = "activites")
-    private List<CentreCamping> centreCampings;
+    @ManyToOne
+    @JsonIgnore
+    private CentreCamping centreCamping;
 
 }
